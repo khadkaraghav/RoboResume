@@ -2,18 +2,18 @@ package com.company;
 
 public class Resume {
 
-    private String name;
-    private String email;
-    private int phoneNumber;
-    private String degree;
-    private String nameOfUniversity;
-    private int year;
-    private String designation;
-    private String company;
-    private String title;
-    private String description;
-    private String skills;
-    private String proficiency;
+    private String name="";
+    private String email="";
+    private int phoneNumber=0;
+    private String degree="";
+    private String nameOfUniversity="";
+    private int year=0;
+    private String designation="";
+    private String company="";
+    private String title="";
+    private String description="";
+    private String skills="";
+    private String proficiency="";
 
 
     public Resume() {
