@@ -34,7 +34,7 @@ public class ResumeView {
             System.out.println("Enter your phone number");
             resume.setPhoneNumber(keyboard.nextInt());
 
-            /*keyboard.nextLine();
+            keyboard.nextLine();
 
             System.out.println("Enter your degree");
             resume.setDegree(keyboard.nextLine());
@@ -53,7 +53,7 @@ public class ResumeView {
             System.out.println("Enter the name of your company");
             resume.setCompany(keyboard.nextLine());
 
-            System.out.println("Enter your title");
+            System.out.println("Enter your duration");   //duration stored in setTitle
             resume.setTitle(keyboard.nextLine());
 
             System.out.println("Enter the description");
@@ -63,7 +63,7 @@ public class ResumeView {
             resume.setSkills(keyboard.nextLine());
 
             System.out.println("Enter your proficiency");
-            resume.setProficiency(keyboard.nextLine());*/
+            resume.setProficiency(keyboard.nextLine());
 
 
             resumeDAO.insert(resume);
@@ -78,20 +78,24 @@ public class ResumeView {
         }
     }
 
-    public void showAll(){
+    public void showAll() {
 
         Resume resume = new Resume();
 
         System.out.println("HERE'S YOUR RESUME");
 
-        //resumeDAO.getAll();
+        for (Resume res : resumeDAO.getAll()) {
 
-        System.out.println(resume.getName().toString());
-        //resumeDAO.getAll().forEach(s ->
+            System.out.println(res.getName()+"\n"+res.getEmail()+"\n"+res.getPhoneNumber()+"\n\n");
 
-        //{
-         //   System.out.println(s.toString());
-       // });
+            System.out.println("Education\n"+res.getDegree()+","+"\n"+res.getNameOfUniversity()+","+res.getYear()+"\n");
+
+            System.out.println("Experience\n"+res.getDesignation()+"\n"+res.getCompany()+","+res.getTitle()+"\n");
+
+            System.out.println("Skills\n"+res.getSkills()+", "+res.getProficiency());
+
+
+        }
     }
 
     public void exit() {
